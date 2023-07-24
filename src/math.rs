@@ -160,6 +160,9 @@ impl Vec3D {
     pub fn new() -> Vec3D {
         Vec3D {x: 0.0, y: 0.0, z: 0.0}
     }
+    pub fn newc(c: f64) -> Vec3D {
+        Vec3D {x: c, y: c, z: c}
+    }
     pub fn sqr_abs(self) -> f64 {
         self.x * self.x + self.y * self.y + self.z * self.z
     }
@@ -183,6 +186,9 @@ impl Vec3D {
         Vec3D {x: self.y * vector.z - self.z * vector.y,
                y: self.z * vector.x - self.x * vector.z,
                z: self.x * vector.y - self.y * vector.x}
+    }
+    pub fn make_point_4d(self) -> Vec4D {
+        Vec4D {x: self.x, y: self.y, z: self.z, w: 1.0}
     }
 }
 
@@ -240,6 +246,9 @@ impl Vec4D {
     pub fn new() -> Vec4D {
         Vec4D {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
     }
+    pub fn newc(c: f64) -> Vec4D {
+        Vec4D {x: c, y: c, z: c, w: c}
+    }
     pub fn sqr_abs(self) -> f64 {
         self.x * self.x + self.y * self.y + self.z * self.z + self.w * self.w
     }
@@ -258,6 +267,12 @@ impl Vec4D {
             panic!("Impl Vec4D: fn normalized(): Division by zero.")
         }
     
+    }
+    pub fn convert_3d(self) -> Vec3D {
+        Vec3D {x: self.x, y: self.y, z: self.z}
+    }
+    pub fn convert_3dv(vector: Vec4D) -> Vec3D {
+        Vec3D {x: vector.x, y: vector.y, z: vector.z}
     }
 }
 enum Vectors {
