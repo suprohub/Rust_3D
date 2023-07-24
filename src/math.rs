@@ -1,4 +1,4 @@
-use std::{ops, array};
+use std::ops;
 
 #[derive(Clone)]
 #[derive(Debug)]
@@ -83,7 +83,7 @@ impl ops::Div<f64> for Vec2D {
 }
 
 impl Vec2D {
-    pub fn new(self) -> Vec2D {
+    pub fn new() -> Vec2D {
         Vec2D {x: 0.0, y: 0.0}
     }
     pub fn sqr_abs(self) -> f64 {
@@ -157,7 +157,7 @@ impl ops::Div<f64> for Vec3D {
 }
 
 impl Vec3D {
-    pub fn new(self) -> Vec3D {
+    pub fn new() -> Vec3D {
         Vec3D {x: 0.0, y: 0.0, z: 0.0}
     }
     pub fn sqr_abs(self) -> f64 {
@@ -237,7 +237,7 @@ impl ops::Div<f64> for Vec4D {
 }
 
 impl Vec4D {
-    pub fn new(self) -> Vec4D {
+    pub fn new() -> Vec4D {
         Vec4D {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
     }
     pub fn sqr_abs(self) -> f64 {
@@ -310,7 +310,10 @@ impl std::ops::Mul<Vec3D> for Matrix {
 
 impl Matrix {
     pub fn new(self) -> Matrix {
-        Matrix::constant(0.0)
+        Matrix {set: [[0.0, 0.0, 0.0, 0.0],
+                      [0.0, 0.0, 0.0, 0.0], 
+                      [0.0, 0.0, 0.0, 0.0], 
+                      [0.0, 0.0, 0.0, 0.0]]}
     }
     pub fn identity() -> Matrix {
         Matrix {set: [[1.0, 0.0, 0.0, 0.0],
@@ -331,7 +334,10 @@ impl Matrix {
                       [0.0, 0.0, 0.0, 1.0]]}
     }
     pub fn zero() -> Matrix {
-        Matrix::constant(0.0)
+        Matrix {set: [[0.0, 0.0, 0.0, 0.0],
+                      [0.0, 0.0, 0.0, 0.0], 
+                      [0.0, 0.0, 0.0, 0.0], 
+                      [0.0, 0.0, 0.0, 0.0]]}
     }
     pub fn translation(v: &Vec3D) -> Matrix {
         Matrix {set: [[1.0, 0.0, 0.0, v.x],
