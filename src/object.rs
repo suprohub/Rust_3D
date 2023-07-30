@@ -8,49 +8,61 @@ pub struct ObjectIdTag {
     id: usize
 }
 
+pub struct ObjectStruct {
+
+}
 
 pub trait Object {
-    pub fn transform(t: &Matrix) {
-        //impl
+    fn transform<T>(me: T, t: &Matrix) {
+        
     }
-    pub fn transform_relative_point(p: &Vec3D, t: &Matrix) {
-        //impl
+    fn transform_relative_point<T>(me: T, p: &Vec3D, t: &Matrix) {
+        
     }
-    pub fn translate(dv: &Vec3D) {
-        //impl
+    fn translate<T>(me: T, dv: &Vec3D) {
+        
     }
-    pub fn translate_to_point(p: &Vec3D) {
-        //impl
+    fn translate_to_point<T>(me: T, p: &Vec3D) {
+        
     }
-    pub fn attract_to_point(p: &Vec3D, value: f64) {
-        //impl
+    fn attract_to_point<T>(me: T, p: &Vec3D, value: f64) {
+        
     }
-    pub fn scale(s: &Vec3D) {
-        //impl
+    fn scale<T>(me: T, s: &Vec3D) {
+        
     }
-    pub fn rotate(r: &Vec3D) {
-        //impl
+    fn rotate<T>(me: T, r: &Vec3D) {
+        
     }
-    pub fn rotaterv(r: &Vec3D, rv: f64) {
-        //impl
+    fn rotaterv<T>(me: T, r: &Vec3D, rv: f64) {
+        
     }
-    pub fn rotate_to_angle(v: &Vec3D) {
-        //impl
+    fn rotate_to_angle<T>(me: T, v: &Vec3D) {
+        
     }
-    pub fn rotate_relative_point(s: &Vec3D, r: &Vec3D) {
-        //impl
+    fn rotate_relative_point<T>(me: T, s: &Vec3D, r: &Vec3D) {
+        
     }
-    pub fn rotate_relative_pointr(s: &Vec3D, v: &Vec3D, r: f64) {
-        //impl
+    fn rotate_relative_pointr<T>(me: T, s: &Vec3D, v: &Vec3D, r: f64) {
+        
     }
-    pub fn rotate_left(rl: f64) {
-        //impl
+    fn rotate_left<T>(me: T, rl: f64) {
+        
     }
-    pub fn rotate_up(ru: f64) {
-        //impl
+    fn rotate_up<T>(me: T, ru: f64) {
+        
     }
-    pub fn rotate_look_at(rl_at: f64) {
-        //impl
+    fn rotate_look_at<T>(me: T, rl_at: f64) {
+        
+    }
+    fn attach<T, Y>(me: T, obj: &Y) {
+        
+    }
+    fn unattach<T, Y>(me: T, obj: &Y) {
+        
+    }
+    fn attached<T, Y>(me: T, obj: &Y) {
+        
     }
     
 
