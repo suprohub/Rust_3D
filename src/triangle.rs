@@ -5,8 +5,8 @@ use crate::math::Vec4D::Vec4D;
 use crate::math::Matrix::Matrix;
 
 
-#[derive(Clone, Copy, Debug)]
-struct Triangle {
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct Triangle {
     color: Color,
     normal: Vec3D,
     p1: Vec4D,
