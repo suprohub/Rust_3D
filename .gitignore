@@ -15,3 +15,7 @@ Cargo.lock
 
 # Executable files
 *.exe
+
+# IDE folders
+.idea
+.vscode
