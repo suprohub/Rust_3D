@@ -10,35 +10,48 @@ pub struct ObjectIdTag {
 
 
 pub trait Object {
-    fn transform(t: &Matrix) {
+    pub fn transform(t: &Matrix) {
         //impl
     }
-    fn transform_relative_point(p: &Vec3D, t: &Matrix) {
+    pub fn transform_relative_point(p: &Vec3D, t: &Matrix) {
         //impl
     }
-    fn translate(dv: &Vec3D) {
+    pub fn translate(dv: &Vec3D) {
         //impl
     }
-    fn translate_to_point(p: &Vec3D) {
+    pub fn translate_to_point(p: &Vec3D) {
         //impl
     }
-    fn attract_to_point(p: &Vec3D, value: f64) {
+    pub fn attract_to_point(p: &Vec3D, value: f64) {
         //impl
     }
-    fn scale(s: &Vec3D) {
+    pub fn scale(s: &Vec3D) {
         //impl
     }
-    fn rotate(r: &Vec3D) {
+    pub fn rotate(r: &Vec3D) {
         //impl
     }
-    fn rotaterv(r: &Vec3D, rv: f64) {
+    pub fn rotaterv(r: &Vec3D, rv: f64) {
         //impl
     }
-    fn rotate_to_angle(v: &Vec3D) {
+    pub fn rotate_to_angle(v: &Vec3D) {
         //impl
     }
-    fn rotate_relative_point(s: &Vec3D, r: &Vec3D) {
+    pub fn rotate_relative_point(s: &Vec3D, r: &Vec3D) {
         //impl
     }
+    pub fn rotate_relative_pointr(s: &Vec3D, v: &Vec3D, r: f64) {
+        //impl
+    }
+    pub fn rotate_left(rl: f64) {
+        //impl
+    }
+    pub fn rotate_up(ru: f64) {
+        //impl
+    }
+    pub fn rotate_look_at(rl_at: f64) {
+        //impl
+    }
+    
 
 }
